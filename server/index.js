@@ -5,7 +5,14 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// Explicit CORS configuration
+app.use(cors({
+    origin: "*",          // Allow all origins
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 
 const port = process.env.PORT || 4000;
 
