@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const connect = () => {
-    const dbURI = "mongodb://127.0.0.1:27017/CheckYard";
+    const dbURI = process.env.MONGO_URI;
 
     if (!dbURI) {
         console.error("DATABASE_URL is not defined in the environment variables.");
