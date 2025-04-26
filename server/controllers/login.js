@@ -18,7 +18,7 @@ exports.login = async (req,res) => {
         };
         
         if(match === true){
-            const token = jwt.sign(payload,process.env.SECRET_KEY,{expiresIn : 60*60*24});
+            const token = jwt.sign(payload,"vasu_best_frnd",{expiresIn : 60*60*24});
             emailCheck = emailCheck.toObject();
             emailCheck.token = token;
             return res.status(200).json({
